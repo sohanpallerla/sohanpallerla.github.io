@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pallerla Sohan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3b82f6", secondary: "#10b981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .hero-section {
+      background-image: url('https://readdy.ai/api/search-image?query=modern%2520tech%2520background%2520with%2520abstract%2520code%2520patterns%2520and%2520digital%2520elements%2520in%2520blue%2520gradient%2520colors%2C%2520perfect%2520for%2520a%2520software%2520developer%2520portfolio.%2520The%2520left%2520side%2520should%2520be%2520lighter%2520or%2520empty%2520for%2520text%2520overlay%2C%2520while%2520the%2520right%2520side%2520can%2520have%2520more%2520detailed%2520tech%2520elements&width=1600&height=800&seq=1&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      .custom-checkbox {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      user-select: none;
+      }
+      .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      }
+      .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 4px;
+      }
+      .custom-checkbox:hover input ~ .checkmark {
+      border-color: #3b82f6;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+      background-color: #3b82f6;
+      border-color: #3b82f6;
+      }
+      .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+      display: block;
+      }
+      .custom-checkbox .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-['Pacifico'] text-primary">
+            Pallerla Sohan
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-gray-700 hover:text-primary font-medium">Home</a>
+          <a href="#about" class="text-gray-700 hover:text-primary font-medium">About</a>
+          <a href="#skills" class="text-gray-700 hover:text-primary font-medium">Skills</a>
+          <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projects</a>
+          <a href="#experience" class="text-gray-700 hover:text-primary font-medium">Experience</a>
+          <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+          <!-- Updated Download CV button for desktop -->
+          <a
+            href="sohan's resume.pdf"
+            download
+            class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+          >
+            Download CV
+          </a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="w-10 h-10 flex items-center justify-center"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">Home</a>
+        <a href="#about" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">About</a>
+        <a href="#skills" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">Skills</a>
+        <a href="#projects" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">Projects</a>
+        <a href="#experience" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">Experience</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">Contact</a>
+        <!-- Updated Download CV button for mobile -->
+        <a
+          href="sohan's resume.pdf"
+          download
+          class="mt-2 w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+        >
+          Download CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="md:w-1/2">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Hi, I'm <span class="text-primary">Pallerla Sohan</span>
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+            Information Technology Student <br> Software Developer
+          </h2>
+          <p class="text-lg text-gray-700 mb-8">
+            I build innovative solutions that combine cutting-edge technology
+            with elegant design. Currently pursuing my Bachelor's degree in
+            Information Technology at Vasavi College of Engineering.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+              >Get in Touch</a
+            >
+            <a
+              href="#projects"
+              class="bg-white text-primary border border-primary px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap"
+              >View Projects</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/3">
+            <div
+              class="relative w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-primary"
+            >
+              <img
+                src="https://static.readdy.ai/image/49b696b8f597c98298552ff4b1c75717/502909c4e0450626ed1400a7760ab9b4.jpeg"
+                alt="Pallerla Sohan"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Information Technology Student | Software Developer
+            </h3>
+            <p class="text-gray-700 mb-6">
+              I am currently pursuing my Bachelor's degree in Information
+              Technology at Vasavi College of Engineering (2022-2026) . I have a strong passion for AI/ML, software
+              development, and active participation in tech communities.
+            </p>
+            <p class="text-gray-700 mb-6">
+              My technical journey includes working with various programming
+              languages and frameworks, developing AI-powered applications, and
+              contributing to open-source projects. I'm particularly interested
+              in the intersection of artificial intelligence and practical
+              software solutions.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-graduation-cap-line ri-lg"></i>
+                </div>
+                <div class="ml-3">
+                  <h4 class="font-medium text-gray-900">Education</h4>
+                  <p class="text-gray-600">B.E. in Information Technology</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <div class="ml-3">
+                  <h4 class="font-medium text-gray-900">Location</h4>
+                  <p class="text-gray-600">Hyderabad, Telangana</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-code-box-line ri-lg"></i>
+                </div>
+                <div class="ml-3">
+                  <h4 class="font-medium text-gray-900">Expertise</h4>
+                  <p class="text-gray-600">Full-Stack Development, AI/ML</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-group-line ri-lg"></i>
+                </div>
+                <div class="ml-3">
+                  <h4 class="font-medium text-gray-900">Communities</h4>
+                  <p class="text-gray-600">GDSC, Competitive Programming</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Education</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+        </div>
+        <div class="space-y-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Vasavi College of Engineering
+                </h3>
+                <p class="text-gray-600 italic">
+                  Bachelor Of Education in Information Technology (CGPA of 7.5)
+                </p>
+              </div>
+              <div class="mt-2 md:mt-0">
+                <span
+                  class="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >2022 - 2026</span
+                >
+              </div>
+            </div>
+            <p class="text-gray-700">Hyderabad, Telangana</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Sri Chaitanya Junior College
+                </h3>
+                <p class="text-gray-600 italic">Intermediate (Grade of 90.4)</p>
+              </div>
+              <div class="mt-2 md:mt-0">
+                <span
+                  class="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >2020 - 2022</span
+                >
+              </div>
+            </div>
+            <p class="text-gray-700">Hyderabad, Telangana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Technical Skills</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-lg"
+              >
+                <i class="ri-code-s-slash-line ri-2x"></i>
+              </div>
+              <h3 class="ml-4 text-xl font-semibold text-gray-900">
+                Languages & Frameworks
+              </h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >C</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >C++</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Java</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Bootstrap</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Artificial Intelligence</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Machine Learning</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >Power BI</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                  >MongoDB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-lg"
+              >
+                <i class="ri-stack-line ri-2x"></i>
+              </div>
+              <h3 class="ml-4 text-xl font-semibold text-gray-900">
+                Software Development
+              </h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">
+                  Data Structures and Algorithms (DSA)
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">
+                  Object-Oriented Programming (OOP's)
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">
+                  Database Management System (DBMS)
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">RESTful API Development</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">Web Application Development</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-lg"
+              >
+                <i class="ri-tools-line ri-2x"></i>
+              </div>
+              <h3 class="ml-4 text-xl font-semibold text-gray-900">
+                Developer Tools
+              </h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">Visual Studio Code</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">Eclipse</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">Google Cloud Platform</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">Android Studio</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-checkbox-circle-line ri-lg"></i>
+                </div>
+                <p class="ml-2 text-gray-700">
+                  Linux, GitHub, DevC++, Jupyter Notebook
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Here are some of my recent projects that showcase my technical
+            skills and problem-solving abilities.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full"
+              >
+                <i class="ri-map-pin-line ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Map Matching Algorithm
+                </h3>
+                <span class="text-sm text-gray-500">March 2025</span>
+              </div>
+              <p class="text-sm text-gray-600 italic mb-4">
+                Python, Jupyter Notebook, HTML, JavaScript, AIML
+              </p>
+              <div class="space-y-3 mb-4">
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Optimized data matching model to classify vehicle movements
+                    with 95% accuracy, improving GNSS-based application
+                    performance in challenging environments.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Developed algorithms reducing latency by 40%, ensuring
+                    seamless navigation under fluctuating GNSS conditions for
+                    real-time vehicle tracking.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Enhanced GNSS-based tolling and navigation systems,
+                    improving route classification accuracy by 30%, reducing
+                    errors in automated tolling and mapping.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://github.com/sohanpallerla/map-matching-algorithm.git"
+                target="_blank"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full"
+              >
+                <i class="ri-robot-line ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-xl font-semibold text-gray-900">Chat Bot AI</h3>
+                <span class="text-sm text-gray-500">October 2024</span>
+              </div>
+              <p class="text-sm text-gray-600 italic mb-4">
+                Python, OpenAI GPT-3 API, Tkinter, Python IDEs, Pip, VS Code
+              </p>
+              <div class="space-y-3 mb-4">
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Developed an OpenAI GPT-3 chatbot for intelligent, accurate
+                    text interactions, boosting user engagement by 45% compared
+                    to traditional chatbots.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Designed a streamlined and intuitive GUI, improving chatbot
+                    usability and ensuring seamless user interactions across
+                    different platforms.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Optimized OpenAI API integration to generate fast, adaptive,
+                    and context-aware responses, improving system efficiency by
+                    35%.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://github.com/sohanpallerla/Chatbot_AI.git"
+                target="_blank"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full"
+              >
+                <i class="ri-github-line ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-xl font-semibold text-gray-900">
+                  GitHub Profile Clone
+                </h3>
+                <span class="text-sm text-gray-500">August 2023</span>
+              </div>
+              <p class="text-sm text-gray-600 italic mb-4">
+                HTML, CSS, Java Script
+              </p>
+              <div class="space-y-3 mb-4">
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Created a responsive GitHub profile clone using HTML, CSS,
+                    and JavaScript to enhance UX and functionality for
+                    developers and project managers.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Integrated GitHub API for real-time profile updates,
+                    optimizing speed for 1,000+ users daily with efficient data
+                    fetching and caching.
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-checkbox-circle-line"></i>
+                  </div>
+                  <p class="ml-2 text-gray-700 text-sm">
+                    Implemented interactive UI elements to display repositories,
+                    followers, and user details, enhancing overall user
+                    engagement by 28%.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://github.com/sohanpallerla/github_profile_clone.git"
+                target="_blank"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Experience</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+        </div>
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"
+          ></div>
+          <!-- Experience Items -->
+          <div class="space-y-12">
+            <!-- Experience 1 -->
+            <div class="relative">
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="md:flex items-center">
+                <div class="md:w-1/2 pr-8 md:text-right mb-4 md:mb-0">
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Competitive Programming Club
+                  </h3>
+                  <p class="text-primary font-medium">HR and PR Member</p>
+                  <p class="text-gray-600">September 2024 - Present</p>
+                </div>
+                <div class="md:w-1/2 pl-8">
+                  <div class="bg-gray-50 p-5 rounded-lg">
+                    <p class="text-gray-700">
+                      Oversaw the complete recruitment process, including
+                      candidate screening and interview conduction, ensuring the
+                      attraction and onboarding of talent aligned with the
+                      club's goals and values.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Experience 2 -->
+            <div class="relative">
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="md:flex items-center">
+                <div class="md:w-1/2 pr-8 md:text-right mb-4 md:mb-0">
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Model United Nations
+                  </h3>
+                  <p class="text-primary font-medium">Marketing Head</p>
+                  <p class="text-gray-600">February 2022 - Present</p>
+                </div>
+                <div class="md:w-1/2 pl-8">
+                  <div class="bg-gray-50 p-5 rounded-lg">
+                    <p class="text-gray-700">
+                      Directed and executed comprehensive event marketing
+                      strategies, attracting over 450 attendees for a
+                      high-visibility conference; implemented targeted social
+                      media campaigns that drove significant interest and
+                      engagement from the target audience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Experience 3 -->
+            <div class="relative">
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="md:flex items-center">
+                <div class="md:w-1/2 pr-8 md:text-right mb-4 md:mb-0">
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Google Development Student Club (GDSC)
+                  </h3>
+                  <p class="text-primary font-medium">Technical Lead</p>
+                  <p class="text-gray-600">September 2022</p>
+                </div>
+                <div class="md:w-1/2 pl-8">
+                  <div class="bg-gray-50 p-5 rounded-lg">
+                    <p class="text-gray-700">
+                      Led technical workshops, mentored students in development,
+                      contributed to projects, and organized collaborative
+                      coding sessions to foster programming skill growth and
+                      innovation among club members.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Experience 4 -->
+            <div class="relative">
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="md:flex items-center">
+                <div class="md:w-1/2 pr-8 md:text-right mb-4 md:mb-0">
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Tech Savishkaar 3.0 (hackathon)
+                  </h3>
+                  <p class="text-primary font-medium">
+                    Head of Marketing and PR
+                  </p>
+                  <p class="text-gray-600">March 2022</p>
+                </div>
+                <div class="md:w-1/2 pl-8">
+                  <div class="bg-gray-50 p-5 rounded-lg">
+                    <p class="text-gray-700">
+                      Successfully marketed and managed a hackathon, attracting
+                      1,000 participants through targeted promotions and
+                      overseeing seamless event execution from planning to
+                      completion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
+          <div class="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Feel free to contact me for any work or suggestions. I'm always open
+            to discussing new projects, creative ideas or opportunities to be
+            part of your vision.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-full mb-4"
+            >
+              <i class="ri-mail-line ri-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+            <p class="text-gray-700 text-center mb-4">
+              I'll get back to you as soon as possible
+            </p>
+            <a
+              href="mailto:sohanpallerla@gmail.com"
+              class="text-primary font-medium"
+              >sohanpallerla@gmail.com</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-full mb-4"
+            >
+              <i class="ri-phone-line ri-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+            <p class="text-gray-700 text-center mb-4">
+              Available Monday to Friday, 9am to 6pm
+            </p>
+            <a href="tel:+919515124025" class="text-primary font-medium"
+              >+91 9515124025</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-full mb-4"
+            >
+              <i class="ri-links-line ri-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Social Profiles
+            </h3>
+            <p class="text-gray-700 text-center mb-4">
+              Connect with me on professional networks
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-linkedin-line"></i>
+              </a>
+              <a
+                href="https://leetcode.com/u/sohanpallerla/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-code-line"></i>
+              </a>
+              <a
+                href="https://www.codechef.com/users/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-terminal-box-line"></i>
+              </a>
+              <a
+                href="https://www.hackerrank.com/profile/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-code-box-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+        >
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
+            Send Me a Message
+          </h3>
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Your Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div class="mb-6">
+              <label
+                for="subject"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="Project Inquiry"
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="5"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="Your message here..."
+              ></textarea>
+            </div>
+            <div class="mb-6">
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="ml-2 text-gray-700"
+                  >I agree to the terms and conditions</span
+                >
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-blue-600 transition whitespace-nowrap"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >Pallerla Sohan</a
+            >
+            <p class="text-gray-400 mb-4">
+              Full-stack developer with expertise in AI/ML and software
+              development. Currently pursuing a Bachelor's degree in Information
+              Technology at Vasavi College of Engineering.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-linkedin-line"></i>
+              </a>
+              <a
+                href="https://leetcode.com/u/sohanpallerla/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-code-line"></i>
+              </a>
+              <a
+                href="https://www.codechef.com/users/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-terminal-box-line"></i>
+              </a>
+              <a
+                href="https://www.hackerrank.com/profile/sohanpallerla"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-code-box-line"></i>
+              </a>
+              <a
+                href="mailto:sohanpallerla@gmail.com"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 rounded-full hover:bg-primary hover:text-white transition"
+              >
+                <i class="ri-mail-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="text-gray-400 hover:text-white transition"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-white transition"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  class="text-gray-400 hover:text-white transition"
+                  >Experience</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div
+                  class="mt-1 w-5 h-5 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="ml-2 text-gray-400"
+                  >Hyderabad, Telangana, India</span
+                >
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="mt-1 w-5 h-5 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="ml-2 text-gray-400">sohanpallerla@gmail.com</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="mt-1 w-5 h-5 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="ml-2 text-gray-400">+91 9515124025</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+          <p class="text-gray-400">
+            &copy; 2025 Pallerla Sohan. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Adjust for header height
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Form validation
+        const contactForm = document.querySelector("form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+            let isValid = true;
+            if (!nameInput.value.trim()) {
+              nameInput.classList.add("border-red-500");
+              isValid = false;
+            } else {
+              nameInput.classList.remove("border-red-500");
+            }
+            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+              emailInput.classList.add("border-red-500");
+              isValid = false;
+            } else {
+              emailInput.classList.remove("border-red-500");
+            }
+            if (!messageInput.value.trim()) {
+              messageInput.classList.add("border-red-500");
+              isValid = false;
+            } else {
+              messageInput.classList.remove("border-red-500");
+            }
+            if (isValid) {
+              // Form is valid, you can submit it or show success message
+              alert("Message sent successfully! I will get back to you soon.");
+              contactForm.reset();
+            }
+          });
+        }
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+      });
+    </script>
+  </body>
+</html>
